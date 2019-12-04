@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   //Lazy Loading
@@ -10,11 +11,13 @@ const routes: Routes = [
   },
   {
     path: 'movies',
-    loadChildren: './pages/movies/movies.module#MoviesPageModule'
+    loadChildren: './pages/movies/movies.module#MoviesPageModule',
+    canLoad: [AuthGuard]
   },
   {
     path: 'movie-details',
-    loadChildren: './pages/movie-details/movie-details.module#MovieDetailsPageModule'
+    loadChildren: './pages/movie-details/movie-details.module#MovieDetailsPageModule',
+    canLoad: [AuthGuard]
   }
 ,
 ];
