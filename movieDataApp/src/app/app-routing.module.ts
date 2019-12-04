@@ -15,7 +15,7 @@ const routes: Routes = [
     canLoad: [AuthGuard] // Only allow this page to load if AuthGuard.canLoad returns true
   },
   {
-    path: 'movie-details',
+    path: 'movies/:id',
     loadChildren: './pages/movie-details/movie-details.module#MovieDetailsPageModule',
     canLoad: [AuthGuard] // Only allow this page to load if AuthGuard.canLoad returns true
   }
