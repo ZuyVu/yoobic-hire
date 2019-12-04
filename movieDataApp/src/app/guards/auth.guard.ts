@@ -12,7 +12,7 @@ export class AuthGuard implements CanLoad {
 
   canLoad(route: Route, segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
     if (!this.authSerivce.authStatus) {
-      //This means user is not yet authorised navigate back to login page
+      // If not authorised, navigate back to login page
       this.router.navigateByUrl('/auth');
     }
 

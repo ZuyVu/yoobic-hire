@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  //Lazy Loading
+  // Lazy Loading
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
   {
     path: 'auth',
@@ -12,12 +12,12 @@ const routes: Routes = [
   {
     path: 'movies',
     loadChildren: './pages/movies/movies.module#MoviesPageModule',
-    canLoad: [AuthGuard]
+    canLoad: [AuthGuard] // Only allow this page to load if AuthGuard.canLoad returns true
   },
   {
     path: 'movie-details',
     loadChildren: './pages/movie-details/movie-details.module#MovieDetailsPageModule',
-    canLoad: [AuthGuard]
+    canLoad: [AuthGuard] // Only allow this page to load if AuthGuard.canLoad returns true
   }
 ,
 ];
