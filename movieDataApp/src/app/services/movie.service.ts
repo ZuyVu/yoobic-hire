@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ComponentFactoryResolver } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -21,8 +21,10 @@ export class MovieService {
    */
 
   searchData(title: string): Observable<any> {
-    return this.http.get(`${this.url}?s=${encodeURI(title)}&type=movie&apikey=${this.apiKey}`).pipe(
+    console.log(`${this.url}?s=${encodeURI(title)}&type=&apikey=${this.apiKey}`);
+    return this.http.get(`${this.url}?s=${encodeURI(title)}&type=&apikey=${this.apiKey}`).pipe(
       map(results => results['Search']));
+    
   }
 
   /**
