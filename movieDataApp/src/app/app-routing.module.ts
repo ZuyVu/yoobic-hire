@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   //Lazy Loading
-  { path: '', redirectTo: 'movies', pathMatch: 'full' },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
   {
     path: 'auth',
     loadChildren: './pages/auth/auth.module#AuthPageModule'
