@@ -3,7 +3,8 @@
    
     <ion-header>
       <ion-toolbar>
-        <ion-title>MY Movie App HAAH</ion-title>
+        <ion-title>My Movie App </ion-title>
+        <!-- <ion-img src="src/assets/film-stocks.jpg"></ion-img> -->
       </ion-toolbar>
     </ion-header>
 
@@ -12,10 +13,22 @@
       <ion-list>
         <ion-menu-toggle>
           <ion-item line="none" routerLink="/movies">
-            <ion-icon name="business" slot="start"></ion-icon>
-            <ion-label>Movies Search</ion-label>
+            <ion-icon name="film" slot="start"></ion-icon>
+            <ion-label>Movie Search</ion-label>
           </ion-item>
         </ion-menu-toggle>
+        <ion-menu-toggle>          
+          <ion-item line="none" button>
+            <ion-icon name="contact" slot="start"></ion-icon>
+            <ion-label>Director Search</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>          
+            <ion-item line="none" button>
+              <ion-icon name="book" slot="start"></ion-icon>
+              <ion-label>Genre</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         <ion-menu-toggle>          
           <ion-item line="none" (click)="onLogOut()" button>
             <ion-icon name="exit" slot="end"></ion-icon>
