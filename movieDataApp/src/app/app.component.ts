@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, AlertController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
@@ -17,7 +17,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertCtr: AlertController
   ) {
     this.initializeApp();
   }
@@ -30,9 +31,22 @@ export class AppComponent {
   }
 
   onLogOut() {
-    console.log("LOGOUT IS CLICKED!!!!");
+    console.log('LOGOUT IS CLICKED!!!!');
     this.authService.logout();
     this.router.navigateByUrl('/auth');
+  }
+
+  async onClickDummyButton() {
+    console.log('Dummy button is clicked');
+
+    const alert = await this.alertCtr.create({
+      header: 'Feature not Implemented',
+      message: 'This is a just a dummy button.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
   }
 
 }
